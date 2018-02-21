@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    <%= title %>
+  </title>
+  <!-- CSS Section -->
+  <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+  <link rel='stylesheet' href='./Content/app.css' />
+</head>
+
+<body>
+
+<!-- Content Area -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-offset-3 col-md-6">
+        <a href="/games/add" class="btn btn-primary"><i class="fa fa-plus"></i> Add a Game</a>
+        <br>
+        <table class="table table-bordered table-striped table-hover">
+          <!-- Header Row -->
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Cost</th>
+            <th class="text-center">Rating</th>
+            <th class="text-center"></th>
+            <th class="text-center"></th>
+          </tr>
+
+          <!-- Template Row -->
+          <% for (let count = 0; count < games.length; count++) { %>
+            <tr>
+              <td class="text-center"><%= games[count].name %></td>
+              <td class="text-center"><%= games[count].cost %></td>
+              <td class="text-center"><%= games[count].rating %></td>
+              <td class="text-center"></td>
+              <td class="text-center"></td>
+            </tr>
+
+          <% } %>
+
+        </table>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+ <!-- JavaScript Section -->
+  <script src="./jquery/dist/jquery.min.js"></script>
+  <script src="./bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="./Scripts/core/app.js"></script>
+</body>
+
+</html>
