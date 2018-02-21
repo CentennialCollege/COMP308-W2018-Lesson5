@@ -5,6 +5,23 @@ let logger = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 
+// import "mongoose"
+let mongoose = require('mongoose');
+
+// URI
+let DB = require('./db');
+
+// point Mongoose to connect to the URI specified
+mongoose.connect(process.env.URI || DB.URI);
+
+let mongoDB = mongoose.connection;
+
+mongoDB.on('error', console.error.bind(console, 'connection error:'));
+mongoDB.once('open', () => {
+  console.log("Connected to MongoDB...");
+});
+
+
 let index = require('../app/routes/index'); // define the main route
 
 let app = express();
