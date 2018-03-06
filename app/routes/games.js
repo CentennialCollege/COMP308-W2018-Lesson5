@@ -9,6 +9,7 @@ let game = require('../models/games');
 router.get('/', (req, res, next) => {
   // find all games in the games collection
   game.find( (err, games) => {
+    console.log(games);
     if(err) {
       return console.error(err);
     }

@@ -1,0 +1,17 @@
+{
+	"name" : "Battle Royale",
+	"rating" : 5,
+	"cost" : 40
+}
+
+{
+	"name" : "PUBG",
+	"rating" : 4,
+	"cost" : 30
+}
+
+{
+	"name" : "Overwatch",
+	"rating" : 3.5,
+	"cost" : 30.50
+}
