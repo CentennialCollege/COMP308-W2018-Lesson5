@@ -5,20 +5,12 @@ let mongoose = require('mongoose');
 // game object created from the Schema / model
 let game = require('../models/games');
 
+let gamesController = require("../controllers/games");
+
 /* GET games List page. READ */
 router.get('/', (req, res, next) => {
   // find all games in the games collection
-  game.find((err, games) => {
-    console.log(games);
-    if (err) {
-      return console.error(err);
-    } else {
-      res.render('games/index', {
-        title: 'Games',
-        games: games
-      });
-    }
-  });
+  gamesController.DisplayGamesList(req, res, next);
 });
 
 // GET the Game Details page in order to add a new Game
