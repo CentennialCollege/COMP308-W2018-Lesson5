@@ -30,6 +30,27 @@ router.get('/add', (req, res, next) => {
   });
 });
 
+// POST process the Game Details page and create a new Game - CREATE
+router.post('/add', (req, res, next) => {
+
+  let newGame = game({
+    "name": req.body.name,
+    "cost": req.body.cost,
+    "rating": req.body.rating
+  });
+
+  game.create(newGame, (err, game) => {
+    if(err) {
+      console.error(err);
+      res.end(err);
+    } else {
+      res.redirect('/games');
+    }
+  });
+
+
+});
+
 
 module.exports = router;
 
