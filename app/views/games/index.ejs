@@ -23,8 +23,13 @@
               <td class="text-center"><%= games[count].name %></td>
               <td class="text-center"><%= games[count].cost %></td>
               <td class="text-center"><%= games[count].rating %></td>
-              <td class="text-center"></td>
-              <td class="text-center"></td>
+              <td class="text-center">
+              <a href="/games/<%= games[count]._id %>" class="btn btn-primary"><i class="fa fa-pencil-square-o"></i> Edit</a>
+              </td>
+              <td class="text-center">
+              <a href="/games/delete/<%= games[count]._id %>" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>
+
+              </td>
             </tr>
 
           <% } %>
