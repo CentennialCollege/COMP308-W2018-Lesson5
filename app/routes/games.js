@@ -22,6 +22,14 @@ router.get('/', (req, res, next) => {
   });
 });
 
+// GET the Game Details page in order to add a new Game
+router.get('/add', (req, res, next) => {
+  res.render('games/details', {
+    title: "Add a new Game",
+    games: ''
+  });
+});
+
 
 module.exports = router;
 
